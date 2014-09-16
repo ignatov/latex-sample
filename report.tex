@@ -7,13 +7,30 @@
 
 \usepackage{lmodern}
 \usepackage[
-backend=biber,
-autocite=inline, labelalpha=true, sortcites=true,
-sortlocale=en_US,
+	backend=biber,
+	autocite=inline, 
+	labelalpha=true, 
+	sortcites=true,
+	sortlocale=ru_RU,
     url=false, 
     doi=true,
-    eprint=false
+    eprint=false,
+    isbn=false,
+    style=authoryear-ibid,
+    bibstyle=numeric
+    % dashed=true
 ]{biblatex}
+
+\DeclareFieldFormat{labelnumberwidth}{\mkbibbold{#1.}}
+
+% \usepackage[citestyle=authoryear,bibstyle=numeric,firstinits=true,backend=bibtex]{biblatex}
+
+
+% \renewbibmacro{in:}{%
+%   \ifentrytype{article}{}{%
+%   \printtext{\bibstring{in}\intitlepunct}}}
+
+\usepackage{filecontents}
 
 \usepackage{hyperref}
 % \hypersetup{colorlinks=true}
@@ -21,13 +38,9 @@ sortlocale=en_US,
 \bibliography{mybib.bib}
 
 \begin{document}
-Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-aliquip ex ea commodo consequat~\cite{fart}. Duis aute irure dolor in~\cite{batlas}
-reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-culpa qui officia deserunt mollit anim id est laborum~\cite{art}.
+Обломочные осадочные породы состоят из частиц пород и минералов, об- разовавшихся в результате разрушения более древних магматических, мета- морфических или осадочных пород~\parencite{art}.
+Эти частицы несут в себе информацию о тектоническоий обстановке источников сноса осадочных пород и осадочных процессах. Долгое время исследователи пытались определить тектоническую обстановку источников сноса с помощью структурных особенностеий песча- ников. Были также попытки объединения петрографических данных с гео- химическими данными~\parencite{batlas}. 
+В последние десятилетия появилось много работ, в которых используются изотопные неодимовые данные для осадочных пород. Изучение неодимовоий изотопии в основном сводилось к вопросам эволюции коры, хотя в некоторых исследованиях решались также и тектонические за- дачи. Одноий из первых работ по объединению геохимических и изотопных методов является работа Макленнана~\parencite{fart}.
 
 % \bibliographystyle{apa}
 
