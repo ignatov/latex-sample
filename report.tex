@@ -1,50 +1,39 @@
-
-
 \documentclass[a4paper,12pt]{article}
 \usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc}
 \usepackage[english,russian]{babel}
-% \usepackage{natbib}
-
 \usepackage{lmodern}
+\usepackage{filecontents}
+\usepackage{hyperref}
+
 \usepackage[
-	backend=biber,
-	autocite=inline, 
-	labelalpha=true, 
-	sortcites=true,
-	sortlocale=ru_RU,
-    url=false, 
-    doi=true,
-    eprint=false,
-    isbn=false,
-    style=authoryear,
-    bibstyle=numeric,
-    maxbibnames=100,
-    maxcitenames=10
+	maxcitenames=2,
+	style=authoryear,
+	bibstyle=numeric,
+	uniquelist=minyear,
+	natbib=true,
+	backend=biber
 ]{biblatex}
 
+\AtBeginBibliography{%
+   \DeclareNameAlias{author}{last-first}%
+}
+\renewcommand*{\revsdnamepunct}{}
+
 \DeclareFieldFormat{labelnumberwidth}{\mkbibbold{#1.}}
+
 \renewcommand*{\nameyeardelim}{\addcomma\space}
 
 \renewcommand*{\finalnamedelim}{%
   \finalandcomma
   \bibstring{,}\space}
 
-\renewcommand*{\finallistdelim}{%
-  \finalandcomma
-  \bibstring{,}\space}
-
-% \bibliographystyle{abbrvnat}
-\usepackage{filecontents}
-\usepackage{hyperref}
-% \hypersetup{colorlinks=true}
-
 \bibliography{mybib.bib}
 
 \begin{document}
-Обломочные осадочные породы состоят из частиц пород и минералов, об- разовавшихся в результате разрушения более древних магматических, мета- морфических или осадочных пород~\parencite{art}.
-Эти частицы несут в себе информацию о тектоническоий обстановке источников сноса осадочных пород и осадочных процессах. Долгое время исследователи пытались определить тектоническую обстановку источников сноса с помощью структурных особенностеий песча- ников. Были также попытки объединения петрографических данных с гео- химическими данными~\parencite{batlas}. 
-В последние десятилетия появилось много работ, в которых используются изотопные неодимовые данные для осадочных пород. Изучение неодимовоий изотопии в основном сводилось к вопросам эволюции коры, хотя в некоторых исследованиях решались также и тектонические за- дачи. Одной из первых работ~\parencite{ivanov} по объединению геохимических и изотопных методов является работа Макленнана~\parencite{fart}.
+Обломочные осадочные породы состоят из частиц луны~\parencite{luna} и минералов, образовавшихся в результате разрушения более древних магматических, метаморфических или осадочных пород~\parencite{art}.
+Эти частицы несут в себе информацию о тектоническоий обстановке источников сноса осадочных пород и осадочных процессах. Долгое время исследователи пытались определить тектоническую обстановку источников сноса с помощью структурных особенностеий песчаников. Были также попытки объединения петрографических данных с гео- химическими данными~\parencite{batlas}. 
+В последние десятилетия появилось много работ, в которых используются изотопные неодимовые данные для осадочных пород. Изучение неодимовоий изотопии в основном сводилось к вопросам эволюции коры, хотя в некоторых исследованиях решались также и тектонические задачи. Одной из первых работ~\parencite{ivanov} по объединению геохимических и изотопных методов является работа Макленнана~\parencite{fart}.
 
 \printbibliography[sorting=nyt]
 \end{document}
